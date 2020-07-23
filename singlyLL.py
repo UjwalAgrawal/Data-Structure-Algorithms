@@ -3,7 +3,7 @@ class Node:
         self.data = data
         self.next = None
 
-class LinkedList:
+class SinglyLL:
     def __init__(self):
         self.head = None
     
@@ -18,8 +18,11 @@ class LinkedList:
             cur.next = node
     
     def display(self):
-        print("****************values are***************")
         cur = self.head
+        if(cur==None):
+            print('Empty list')
+            return
+        print("****************values are***************")
         while(cur.next):
             print(cur.data)
             cur= cur.next
@@ -28,8 +31,20 @@ class LinkedList:
 
     def delete(self,num):
         cur = self.head
-        while(cur.data!=num or not cur.next):
-            pass
+        prev = self.head
+        while(cur.next):
+            if(cur.data==num):
+                prev.next = cur.next
+                print(f"\n{num}, deleted successfully!!!")
+                break
+            else:
+                prev = cur
+                cur = cur.next
+        if(cur.data==num):
+            prev.next = None
+        self.display()
+        
+
 
     def length(self):
         count = 0
@@ -59,14 +74,15 @@ class LinkedList:
            
 
 
-SinglyLL = LinkedList()
-for _ in range(5):
+my_list = SinglyLL()
+"""for _ in range(5):
     d = int(input())
-    SinglyLL.append(d)
+    my_list.append(d)"""
 
-SinglyLL.display()
-SinglyLL.insert(100,3)
-SinglyLL.display()
+my_list.display()
+my_list.insert(100,3)
+my_list.display()
+my_list.delete(5)
 
 
 
