@@ -16,7 +16,7 @@ class DoublyLL:
             cur = cur.next
     
     def append(self, data):
-        node = Node(data):
+        node = Node(data)
         if(self.head == None):
             self.head = node
         else:
