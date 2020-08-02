@@ -71,6 +71,17 @@ class BinarySearchTree:
             self.__search(t.right, num)
         else:
             self.__search(t.left, num)
+    
+    def height(self):
+        return(self.__height(self.root))
+    
+    def __height(self, t, h=-1):
+        if(t==None):
+            return(h)
+        lh = self.__height(t.left, h+1)
+        rh = self.__height(t.right, h+1)
+        return(max(lh, rh))
+
 
         
 
@@ -87,3 +98,4 @@ tree.preOrder()
 tree.postOrder()
 tree.inOrder()
 tree.search(int(input("\nWhich number you want to search: ")))
+print(f"Height of the tree is {tree.height()}")
