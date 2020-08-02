@@ -28,7 +28,7 @@ class BinarySearchTree:
                 else:
                     break
     def inOrder(self):
-        print("The values in preorder are:")
+        print("\nThe values in preorder are:", end= " ")
         self.__inOrder(self.root)
 
     def __inOrder(self,root):
@@ -38,7 +38,7 @@ class BinarySearchTree:
             self.__inOrder(root.right)
 
     def preOrder(self):
-        print("The values in preorder are:")
+        print("\nThe values in preorder are:", end= " ")
         self.__preOrder(self.root)
 
     def __preOrder(self, root):
@@ -48,7 +48,7 @@ class BinarySearchTree:
             self.__preOrder(root.right)
 
     def postOrder(self):
-        print("The values in postorder are:")
+        print("\nThe values in postorder are:", end= " ")
         self.__postOrder(self.root)
 
     def __postOrder(self, root):
@@ -56,6 +56,23 @@ class BinarySearchTree:
             self.__postOrder(root.left)
             self.__postOrder(root.right)
             print(root.value,end=" ")
+    
+    def search(self, num):
+        self.__search(self.root, num)
+
+    def __search(self, t, num):
+        if(t==None):
+            print("Not present")
+            return
+        elif(num == t.value):
+            print("Present")
+            return
+        elif(num > t.value):
+            self.__search(t.right, num)
+        else:
+            self.__search(t.left, num)
+
+        
 
 
 tree = BinarySearchTree()
@@ -69,3 +86,4 @@ for i in range(t):
 tree.preOrder()
 tree.postOrder()
 tree.inOrder()
+tree.search(int(input("\nWhich number you want to search: ")))
