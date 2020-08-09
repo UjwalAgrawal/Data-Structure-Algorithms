@@ -57,6 +57,21 @@ class BinarySearchTree:
             self.__postOrder(root.right)
             print(root.value,end=" ")
     
+    def levelOrder(self):
+        h = self.height()
+        print("\nThe values in levelOrder are:", end= " ")
+        for i in range(1,h+2):
+            self.printgivenlevel(self.root,i)
+
+
+    def printgivenlevel(self,root,h):
+        if(root==None):return
+        if h==1:
+            print(root.value,end=" ")
+        elif(h>1):
+            self.printgivenlevel(root.left,h-1)
+            self.printgivenlevel(root.right,h-1)
+    
     def search(self, num):
         self.__search(self.root, num)
 
@@ -97,5 +112,6 @@ for i in range(t):
 tree.preOrder()
 tree.postOrder()
 tree.inOrder()
+tree.levelOrder()
 tree.search(int(input("\nWhich number you want to search: ")))
 print(f"Height of the tree is {tree.height()}")
