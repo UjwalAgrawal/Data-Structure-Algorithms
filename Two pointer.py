@@ -5,6 +5,7 @@ b = list(range(50))
 print(a)
 print(b)
 i = 0
+f=1
 j = len(b)-1
 while(i<len(a) and j>=0):
     if(a[i]+ b[j]< summ):
@@ -13,5 +14,7 @@ while(i<len(a) and j>=0):
         j-=1
     else:
         print(a[i], b[j])
+        f=0
         break
-
+if(f):
+    print("No possible solution")
