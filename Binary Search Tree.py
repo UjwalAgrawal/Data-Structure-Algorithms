@@ -28,34 +28,40 @@ class BinarySearchTree:
                 else:
                     break
     def inOrder(self):
-        print("\nThe values in preorder are:", end= " ")
+        print("\nThe values in inorder are:", end= " ")
+        self.inlist = []
         self.__inOrder(self.root)
+        print(self.inlist)
 
     def __inOrder(self,root):
         if(root):
             self.__inOrder(root.left)
-            print(root.value,end=" ")
+            self.inlist.append(root.value)
             self.__inOrder(root.right)
 
     def preOrder(self):
         print("\nThe values in preorder are:", end= " ")
+        self.prelist = []
         self.__preOrder(self.root)
+        print(self.prelist)
 
     def __preOrder(self, root):
         if(root!=None):
-            print(root.value,end=" ")
+            self.prelist.append(root.value)
             self.__preOrder(root.left)
             self.__preOrder(root.right)
 
     def postOrder(self):
         print("\nThe values in postorder are:", end= " ")
+        self.postlist = []
         self.__postOrder(self.root)
+        print(self.postlist)
 
     def __postOrder(self, root):
         if(root!=None):
             self.__postOrder(root.left)
             self.__postOrder(root.right)
-            print(root.value,end=" ")
+            self.postlist.append(root.value)
     
     def levelOrder(self):
         h = self.height()
