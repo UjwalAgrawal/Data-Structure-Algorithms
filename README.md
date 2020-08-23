@@ -1,1 +1,3 @@
-Data structure and algorithms in python
+Data structure and algorithms purely in python
+
+Liked it?♥ Star it.⭐
