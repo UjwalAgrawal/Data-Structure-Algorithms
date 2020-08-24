@@ -10,8 +10,9 @@ def merge_sort(num_list):
         list2=merge_sort(right_list)
         sorted_list=merge(list1, list2)
         return sorted_list
+
 def merge(left_list,right_list):
-    i,j=0,0
+    i=j=0
     sorted_list=[]
     while(i<len(left_list) and j<len(right_list)):
         if left_list[i]<=right_list[j]:
@@ -29,5 +30,5 @@ def merge(left_list,right_list):
 
 n=int(input("Number of elements: "))
 listy = list(map(int,input("Enter the elements: ").split()))
-result = merge_sort(num_list)
+result = merge_sort(listy)
 print(*result)
