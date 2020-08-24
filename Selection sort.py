@@ -5,5 +5,7 @@ def selection_sort(listy):
 				listy[j],listy[i] = listy[i], listy[j]
 	return(listy)
 
-list1 = [input() for i in range(int(input("Enter no of elements: ")))]
-print(*selection_sort(list1))
+n=int(input("Number of elements: "))
+listy = list(map(int,input("Enter the elements: ").split()))
+result = selection_sort(listy)
+print(*result)
