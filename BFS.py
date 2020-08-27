@@ -7,7 +7,7 @@ class Graph:
         self.graph[u].append(v)
     
     def BFS(self, start):
-        visited = [False]*(len(self.graph))
+        visited = [False]*(max(self.graph)+1)
         queue = []
         queue.append(start)
         visited[start] = True
@@ -26,4 +26,4 @@ myGraph.addEdge(0,3)
 myGraph.addEdge(1,2)
 myGraph.addEdge(2,3)
 myGraph.addEdge(3,3)
-myGraph.BFS(2)
+myGraph.BFS(0)
