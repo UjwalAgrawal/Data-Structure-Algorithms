@@ -7,7 +7,7 @@ class Graph:
         self.graph[u].append(v)
     
     def DFS(self, v):
-        self.visited = [False]*(max(self.graph)+1)
+        self.visited = defaultdict(bool)
         self._dfs(v)
 
     def _dfs(self, v):
@@ -18,12 +18,11 @@ class Graph:
                 self._dfs(i)
 
 
-
-myGraph = Graph()
-myGraph.addEdge(0,1)
-myGraph.addEdge(0,2)
-myGraph.addEdge(0,3)
-myGraph.addEdge(1,2)
-myGraph.addEdge(2,3)
-myGraph.addEdge(3,3)
-myGraph.DFS(0)
+if __name__ == "__main__":
+    myGraph = Graph()
+    ver,e = map(int, input().split()) #Number of vertices and edges
+    for i in range(e):
+        u,v = input().split()
+        myGraph.addEdge(u,v)
+    p=input() #starting point for DFS
+    myGraph.DFS(p)
