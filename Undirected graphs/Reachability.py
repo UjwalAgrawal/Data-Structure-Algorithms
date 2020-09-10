@@ -16,11 +16,8 @@ class graph:
         self.visited = defaultdict(bool)
         self.listy = []
         self._dfs(u)
-        if(q in self.listy):
-            return(1)
-        else:
-            return(0)
-    
+        return(q in self.listy)
+        
     def _dfs(self, u):
         self.visited[u] = True
         self.listy.append(u)
