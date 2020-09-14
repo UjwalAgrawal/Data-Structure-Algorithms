@@ -1,3 +1,5 @@
+# Check whether a given directed graph with 𝑛 vertices and 𝑚 edges contains a cycle
+
 from collections import defaultdict
 
 class graph:
