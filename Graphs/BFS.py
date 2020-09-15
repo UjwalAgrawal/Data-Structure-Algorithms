@@ -25,7 +25,7 @@ if __name__ == "__main__":
     for i in range(e):
         u,v = input().split()
         myGraph.addEdge(u,v)
-    p=input() #starting point for DFS
+    p=input() #starting point for BFS
     myGraph.BFS(p)
 
 
