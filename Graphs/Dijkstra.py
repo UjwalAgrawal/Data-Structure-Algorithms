@@ -3,7 +3,6 @@
 # weight of a path from 𝑢 to 𝑣).
 # Output the minimum weight of a path from 𝑢 to 𝑣, or −1 if there is no path
 
-import sys
 from collections import defaultdict
 import heapdict
 
@@ -23,7 +22,7 @@ class Graph:
         self.dist[u] = 0 #distance of self node is always 0 in non-negative graph
         #using heap of type dictionary that returns tuple of least priority
         q = heapdict.heapdict() 
-        q[u]=0 #
+        q[u]=0 #distance from itself is 0
         while(q.__len__()):
             i = q.popitem()[0]
             for node in self.adj[i]:
@@ -41,5 +40,5 @@ if __name__ == "__main__":
     for _ in range(edges):
         u,v,w = map(int, input().split())
         g.addEdge(u,v,w)
-    p, q = map(int, input().split())
+    p, q = map(int, input().split())    #nodes between which shortest distance is to found
     print(g.dijkstra(p,q))
