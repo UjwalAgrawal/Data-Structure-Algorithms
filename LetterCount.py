@@ -1,3 +1,6 @@
+# count occurences of letter in a word
+# e.g. aaabbcccabaa = [['a', 3], ['b', 2], ['c', 3], ['a', 1], ['b', 1], ['a', 2]]
+
 def letterCount(s):
     i = 0
     n=len(s)
