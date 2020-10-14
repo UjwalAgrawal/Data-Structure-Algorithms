@@ -75,14 +75,11 @@ class SinglyLL:
 
 
 my_list = SinglyLL()
-"""for _ in range(5):
+for _ in range(5):
     d = int(input())
-    my_list.append(d)"""
+    my_list.append(d)
 
 my_list.display()
 my_list.insert(100,3)
 my_list.display()
 my_list.delete(5)
-
-
-
