@@ -10,6 +10,7 @@ class Graph:
     def __init__(self):
         self.adj  = defaultdict(list)
         self.w = {}
+        self.visited = defaultdict(bool)
     
     def addEdge(self, u,v, w):
         self.adj[u].append(v)
@@ -25,10 +26,11 @@ class Graph:
         q[u]=0 #distance from itself is 0
         while(q.__len__()):
             i = q.popitem()[0]
-            for node in self.adj[i]:
-                if(self.dist[node]>self.dist[i]+self.w[i,node]):
-                    self.dist[node]=self.dist[i]+self.w[i,node]
-                    q[node]=self.dist[node]
+            if self.visited[i] == False:
+                for node in self.adj[i]:
+                    if(self.dist[node]>self.dist[i]+self.w[i,node]):
+                        self.dist[node]=self.dist[i]+self.w[i,node]
+                        q[node]=self.dist[node]
         
         return(self.dist[v]) if(self.dist[v]!=1000000000) else -1
     
