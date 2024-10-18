@@ -19,4 +19,4 @@ def maximumSubarraySum(nums: List[int], k: int) -> int:
 
 nums = [1,5,4,2,9,9,9]
 k = 3
-print("Maximum sum of distinct subarrays of size k is: ", maximumSubarraySum(nums, 3))
+print("Maximum sum of distinct subarrays of size k is: ", maximumSubarraySum(nums, k))
